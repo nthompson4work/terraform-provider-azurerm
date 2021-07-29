@@ -1576,7 +1576,7 @@ func resourceStorageAccountRead(d *pluginsdk.ResourceData, meta interface{}) err
 			}
 			d.Set("allow_blob_public_access", allowBlobPublicAccess)
 		} else {
-			d.Set("allow_blob_public_access", *props.AllowBlobPublicAccess)
+			d.Set("allow_blob_public_access", props.AllowBlobPublicAccess)
 		}
 
 		// For all Clouds except Public, China, and USGovernmentCloud, "min_tls_version" is not returned from Azure so always persist the default values for "min_tls_version".
