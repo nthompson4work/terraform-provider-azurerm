@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/services/appconfiguration/validate"
+
 	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/internal/services/appconfiguration/parse"
 
 	"github.com/terraform-providers/terraform-provider-azurerm/azurerm/helpers/tf"
@@ -268,5 +270,5 @@ func (k KeyResource) Delete() sdk.ResourceFunc {
 }
 
 func (k KeyResource) IDValidationFunc() pluginsdk.SchemaValidateFunc {
-	return nil
+	return validate.AppConfigurationKeyID
 }
